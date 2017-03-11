@@ -9,15 +9,47 @@ var header = {
   'Content-Type': 'application/json',
 };
 
+var idCounter = 1;
+var messages = [];
+
+var action = {
+  GET: function(req, res) {
+    res.writeHead(200, header);
+    res.end(JSON.stringify({results: messages}));
+  },
+
+  POST: function(req, res) {
+    req.on('data', function(data) {
+      data = JSON.parse(data);
+      data.objectId = ++idCounter;
+      messages.push(data);
+    });
+
+    req.on('end', function() {
+      res.writeHead(201, header);
+      res.end(JSON.stringify({results: messages}));
+    });
+  },
+
+  OPTIONS: function(req, res) {
+    res.writeHead(200, header);
+    res.end(JSON.stringify({results: messages}));
+  },
+
+  ERROR: function(req, res) {
+    res.writeHead(404, header);
+    res.end('404 Not found');
+  },
+};
+
 var requestHandler = function(req, res) {
   console.log(`HANDLER: request-type: ${req.method} url: ${req.url}`);
 
-  // The outgoing status.
-  var statusCode = 200;
-
-  res.writeHead(statusCode, headers);
-
-  res.end('Hello, World!');
+  if (req.url.indexOf('/classes/messages') > -1) {
+    action[req.method](req, res);
+  } else {
+    action.ERROR(req, res);
+  }
 };
 
 exports.requestHandler = requestHandler;

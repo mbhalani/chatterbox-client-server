@@ -1,4 +1,4 @@
-console.log('HANDLER: Line 1');
+console.log('HANDLER: begin of file');
 
 // These headers will allow Cross-Origin Resource Sharing (CORS).
 var header = {

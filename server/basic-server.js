@@ -1,4 +1,4 @@
-console.log('SERVER: Line 1');
+console.log('SERVER: begin of file');
 /* Import node's http module: */
 const http = require('http');
 

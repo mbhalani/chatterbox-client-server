@@ -1,10 +1,8 @@
 {
-  "name": "chatterbox-client",
+  "name": "chatterbox-client-server",
   "version": "1.0.0",
-  "description": "Your new favorite chat client",
-  "authors": [
-    "Hack Reactor <curriculum.team@hackreactor.com>"
-  ],
+  "description": "Your new favorite chat client and server",
+  "authors": [],
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {

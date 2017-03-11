@@ -1,5 +1,5 @@
 /* Import node's http module: */
-
+const http = require('http');
 
 
 // Every server needs to listen on a port with a unique number. The
@@ -7,13 +7,13 @@
 // normally already claimed by another server and/or not accessible
 // so we'll use a standard testing port like 3000, other common development
 // ports are 8080 and 1337.
+const port = process.env.PORT || 3000;
 
 
 // For now, since you're running this server on your local machine,
 // we'll have it listen on the IP address 127.0.0.1, which is a
 // special address that always refers to localhost.
-
-
+const ip = process.env.IP || '127.0.0.1';
 
 
 // We use node's http module to create a server.
@@ -22,7 +22,11 @@
 // incoming requests.
 //
 // After creating the server, we will tell it to listen on the given port and IP. */
+const server = http.createServer( (req, res) => {
+  console.log('SERVING: ', req.method);
 
+  response.end('???');
+});
 
 // To start this server, run:
 //

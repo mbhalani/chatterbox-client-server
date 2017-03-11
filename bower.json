@@ -10,14 +10,16 @@
   "dependencies": {
     "backbone": "~1.1.2",
     "underscore": "~1.7.0",
-    "jquery": "~2.1.1"
+    "jquery": "^3.1.1"
   },
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
-  ]
+    "tests",
+    // "client/bower_components"
+  ],
+  // "homepage": "https://github.com/mbhalani/hrr21-chatterbox-server",
+  // "main": ""
 }
-

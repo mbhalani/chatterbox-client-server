@@ -2,12 +2,12 @@
   "name": "chatterbox-client-server",
   "version": "1.0.0",
   "description": "Your new favorite chat client and server",
-  "authors": [],
+  "authors": ["MTB"],
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "backbone": "~1.1.2",
-    "underscore": "~1.7.0",
+    "underscore": "~1.8.3",
     "jquery": "^3.1.1"
   },
   "ignore": [
@@ -15,9 +15,6 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests",
-    // "client/bower_components"
-  ],
-  // "homepage": "https://github.com/mbhalani/hrr21-chatterbox-server",
-  // "main": ""
+    "tests"
+  ]
 }
